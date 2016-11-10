@@ -1,0 +1,45 @@
+priority -50
+
+snippet log "Debug Log" b
+Debug.Log(${1:});
+endsnippet
+
+snippet gc "Quick GetComponent" b
+${1:} ${2:};
+$2 = GetComponent<$1>();
+endsnippet
+
+snippet ed "Event declaration" b
+public delegate void On${1:name}Event(${2:});
+public event On$1Event On$1;
+endsnippet
+
+snippet er "Event raising" b
+if (On${1:name} != null)
+	On$1(${2:});
+endsnippet
+
+snippet odg "OnDrawGizmos" b
+void OnDrawGizmos()
+{
+	Gizmos.color = Color.${1:color};
+	${2:}
+}
+endsnippet
+
+snippet puf "Public function" b
+public ${1:type} ${2:name}()
+{
+	${3:}
+}
+endsnippet
+
+snippet sing "Singleton" b
+public static ${1:type} instance;
+void Awake() {
+	if (instance == null)
+		instance = this;
+	else
+		Destroy(instance);
+}
+endsnippet
