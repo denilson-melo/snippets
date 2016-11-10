@@ -1,0 +1,9 @@
+snippet jsd "JSON dump" b
+with io.open('$1.json', 'w') as outfile:    
+	json.dump($2, outfile, ensure_ascii=False, indent=4)
+endsnippet
+
+snippet mkd "Make folder if exists" b
+if not os.path.exists('$1'):
+    os.makedirs('$1')
+endsnippet
